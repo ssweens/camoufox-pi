@@ -1,6 +1,6 @@
 {
-	"name": "@the-forge-flow/camoufox-pi",
-	"version": "0.2.1",
+	"name": "@ssweens/camoufox-pi",
+	"version": "0.2.2",
 	"description": "PI extension for stealth web search and URL fetching via Camoufox",
 	"type": "module",
 	"main": "./dist/index.js",
@@ -16,11 +16,13 @@
 	},
 	"files": [
 		"dist",
+		"scripts",
 		"skills",
 		"README.md",
 		"LICENSE"
 	],
 	"scripts": {
+		"postinstall": "node scripts/patch-playwright-core.mjs",
 		"build": "tsc -p tsconfig.build.json",
 		"dev": "tsc -p tsconfig.build.json --watch",
 		"test": "vitest run",
@@ -46,16 +48,16 @@
 		"tff",
 		"the-forge-flow"
 	],
-	"author": "The Forge Flow",
+	"author": "ssweens (fork of @the-forge-flow/camoufox-pi by MonsieurBarti)",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/MonsieurBarti/camoufox-pi.git"
+		"url": "https://github.com/ssweens/pi-packages.git"
 	},
 	"bugs": {
-		"url": "https://github.com/MonsieurBarti/camoufox-pi/issues"
+		"url": "https://github.com/ssweens/pi-packages/issues"
 	},
-	"homepage": "https://github.com/MonsieurBarti/camoufox-pi#readme",
+	"homepage": "https://github.com/ssweens/pi-packages/tree/main/camoufox-pi#readme",
 	"publishConfig": {
 		"access": "public"
 	},

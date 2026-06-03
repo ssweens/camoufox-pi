@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2] (2026-06-02)
+
+### Bug Fixes
+
+* **postinstall:** patch playwright-core `FFBrowserContext` and `FFPage._onUncaughtError` to guard against undefined `location` on page errors fired after context teardown on React/Next.js SPAs. Prevents uncaughtException crash that killed the pi host process. Patch is idempotent and version-tolerant. ([scripts/patch-playwright-core.mjs](./scripts/patch-playwright-core.mjs))
+
+---
+
 ## [0.2.1](https://github.com/MonsieurBarti/camoufox-pi/compare/camoufox-pi-v0.2.0...camoufox-pi-v0.2.1) (2026-04-13)
 
 
