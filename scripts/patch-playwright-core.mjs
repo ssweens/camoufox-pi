@@ -27,8 +27,7 @@
  */
 
 import { readFileSync, writeFileSync } from "node:fs";
-import { createRequire } from "node:module";
-import { resolve, dirname } from "node:path";
+import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -74,9 +73,9 @@ const P1_NEEDLE = "params2.stack.split";
 const P1_REPLACEMENT = '(params2.stack || "").split';
 // Also guard missing try-catch: inject try/catch around the body.
 const P1_BODY_NEEDLE =
-	'_onUncaughtError(params2) {\n        const { name, message } = splitErrorMessage';
+	"_onUncaughtError(params2) {\n        const { name, message } = splitErrorMessage";
 const P1_BODY_REPLACEMENT =
-	'_onUncaughtError(params2) {\n        try {\n          const { name, message } = splitErrorMessage';
+	"_onUncaughtError(params2) {\n        try {\n          const { name, message } = splitErrorMessage";
 const P1_TAIL_NEEDLE = "this._page.addPageError(error, params2.location);\n      }";
 const P1_TAIL_REPLACEMENT =
 	"this._page.addPageError(error, params2.location);\n        } catch (e) { /* location undefined race — suppressed by camoufox-pi patch */ }\n      }";
@@ -118,9 +117,7 @@ src = src
 
 if (src !== beforeP2) {
 	changed = true;
-	console.log(
-		"[camoufox-pi] patch-playwright-core: applied Patch 2 (pageError location defaults)",
-	);
+	console.log("[camoufox-pi] patch-playwright-core: applied Patch 2 (pageError location defaults)");
 } else {
 	console.log(
 		"[camoufox-pi] patch-playwright-core: Patch 2 already applied or needle not found — skipping",
