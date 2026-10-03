@@ -1,8 +1,7 @@
 # Dependencies
 node_modules/
 
-# Build output
-dist/
+# Build output (dist/ is committed: Pi loads ./dist/index.js straight from git and does not build)
 
 # IDE
 .idea/

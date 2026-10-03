@@ -1,0 +1,1 @@
+{"version":3,"file":"signal.d.ts","sourceRoot":"","sources":["../../src/client/signal.ts"],"names":[],"mappings":"AAIA,MAAM,WAAW,cAAc;IAC9B,QAAQ,CAAC,MAAM,EAAE,WAAW,CAAC;IAC7B,OAAO,IAAI,IAAI,CAAC;CAChB;AAED,wBAAgB,cAAc,CAC7B,QAAQ,EAAE,WAAW,GAAG,SAAS,EACjC,SAAS,EAAE,MAAM,GACf,cAAc,CA0BhB"}
